@@ -1,6 +1,36 @@
 <p>user-details works!</p>
 
 
-
-
-{{posts | json}}
+<section class="user-details container">
+        <div class="user-details__row flex">
+            <div class="user-details__box">
+                <div class="user-details__box-title">
+                    Contact Info
+                </div>
+                <div class="user-details__box-content">
+                    <div>Username: {{posts.username}}</div>
+                    <div>Email: <a href="mailto:{{posts.email}}"></a>{{posts.email}}</div>
+                    <div>Phone: <a href="tel:{{posts.phone}}">{{posts.phone}}</a></div>
+                    <div>Website: <a href="{{posts.website}}">{{posts.website}}</a></div>
+                </div>
+            </div>
+            <div class="user-details__box">
+                <div class="user-details__box-title">
+                    Address
+                </div>
+                <div class="user-details__box-content">
+                    <div>{{posts.address.suite}} {{posts.address.street}}, {{posts.address.city}}, {{posts.address.zipcode}}</div>
+                </div>
+            </div>
+            <div class="user-details__box">
+                <div class="user-details__box-title">
+                    Company
+                </div>
+                <div class="user-details__box-content">
+                    <div>{{posts.company.name}}</div>
+                    <div>{{posts.company.bs}}</div>
+                    <div>{{posts.company.catchPhrase}}</div>
+                </div>
+            </div>
+        </div>
+</section>

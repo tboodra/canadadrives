@@ -1,1 +1,140 @@
 /* You can add global styles to this file, and also import other style files */
+/* CSS reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+    line-height: 1;
+    overflow-x: hidden;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+/* This css is mine, everything above is a CSS reset copied from google. */
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+
+.title-font{
+    display:inline-block;
+    font-weight: 700;
+    font-size: 2em;
+    margin-bottom:1em;
+}
+
+.container{
+    width: 100%;
+    padding: 0px 15px;
+    margin: 0 auto;
+}
+.center{
+    text-align: center;
+}
+.flex{
+    display: flex;
+}
+.filter-top {
+    margin-bottom: 1em;
+}
+.filter-top__left {
+    font-weight: 700;
+    font-size: 1.6em;
+}
+.users-list__user, .user-details__row, .filter-top{
+    justify-content: space-between;
+}
+.users-list__wrapper {
+    border: 1px solid grey;
+}
+.users-list__names{
+    line-height: 1.6;
+}
+.users-list__user:nth-of-type(odd) {
+    background: #efefef;
+}
+.users-list__user {
+    padding: 20px;
+    align-items: center;
+}
+.users-list__user-left {
+    align-items: center;
+}
+.users-list__user:not(.users-list__user:last-of-type) {
+    border-bottom:1px solid grey;
+}
+
+
+
+
+.user-details__box {
+    padding: 15px 20px;
+}
+.user-details__box-title {
+    font-weight: 700;
+    margin-bottom: 1em;
+}
+.user-details__box-content {
+    line-height: 1.3em;
+}
+
+.rounded-img{
+    border-radius: 50%;
+    align-self: center;
+    margin-right: 20px;
+}
+
+@media screen and (min-width: 768px){
+
+    .container{
+        max-width: 1024px;
+    }
+    .user-details__row.flex {
+        margin: 0px -10px;
+    }
+    .user-details__box {
+        flex: 1;
+        border: 1px solid black;
+        margin: 10px;
+    }
+  
+}
+@media screen and (min-width: 1199px){
+
+}

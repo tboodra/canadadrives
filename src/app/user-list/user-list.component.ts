@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router'; //import router
-import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { getSafePropertyAccessString } from '@angular/compiler';
 
 @Component({
   selector: 'app-user-list',

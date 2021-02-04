@@ -1,6 +1,27 @@
-<p>user-list works!</p>
-<div *ngFor="let post of posts | async">
-        {{post | json}}
-</div>
 
-{{posts | json}}
+<section class="filter-top flex container">
+                <div class="filter-top__left">Users</div>
+                <div class="filter-top__right">
+                    Search: <input type="text" value="">
+                    Sort By: <select name="sort-by" id="">
+                        <option value="name" selected>Name</option>
+                        <option value="username">Username</option>
+                        <option value="email">E-mail</option>
+                    </select>
+                </div>
+            </section>
+
+<section class="users-list container">
+                <div class="users-list__wrapper">
+                                
+                    <div *ngFor="let post of posts | async" class="users-list__user flex">
+                        <div class="users-list__user-left flex">
+                                <div class="users-list__photo"><img class="rounded-img" src="http://via.placeholder.com/50x50"></div>
+                                <div class="users-list__names">{{post.name}}<br />{{post.username}}</div>
+                        </div>
+                        <div class="users-list__email">{{post.email}}</div>
+                    </div>
+                </div>
+            </section>
+
+            {{posts | json}}
