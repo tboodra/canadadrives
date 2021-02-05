@@ -1,0 +1,81 @@
+input#search-text {
+    margin-right: 0px;
+    width: 100%;
+    box-sizing: border-box;
+}
+select#sort-by {
+    width: 100%;
+}
+
+.filter-top {
+    margin-bottom: 1em;
+    &__left {
+        font-weight: 700;
+        font-size: 1.6em;
+    }
+    &__right {
+        margin-top: 1rem;
+    }
+}
+.users-list__user, .user-details__row, .filter-top{
+    justify-content: space-between;
+    flex-direction: column;
+}
+.users-list{
+    &__wrapper {
+        border: 1px solid grey;
+    }
+    &__email {
+        padding-left: 70px;
+    }
+    &__user {
+        padding: 20px;
+        align-items: unset;
+        transition:0.3s;
+        background-color: white;
+        &:hover{
+            box-shadow: 1px 1px 9px 0px rgb(0 0 0 / 40%);
+            filter: brightness(95%);
+    
+        }
+        &:nth-of-type(odd) {
+            background: #efefef;
+        }
+        &:not(.users-list__user:last-of-type) {
+            border-bottom:1px solid grey;
+        }
+        &-left {
+            align-items: center;
+            cursor: pointer;
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+}
+.users-list__names,.users-list__email{
+    line-height: 1.6;
+}
+
+@media screen and (min-width: 768px){
+    .filter-top__right {
+        margin-top: 0rem;
+    }
+    .users-list__user, .user-details__row, .filter-top{
+        flex-direction: unset;
+    }
+    .users-list__user {
+        align-items: center;
+    }
+    .users-list__email {
+        padding-left: 0px;
+    }
+    input#search-text {
+        margin-right: 20px;
+        width: auto;
+        box-sizing: border-box;
+    }
+    select#sort-by {
+        width: auto;
+    }
+}

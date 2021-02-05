@@ -51,7 +51,15 @@ table {
 body{
     font-family: 'Open Sans', sans-serif;
 }
-
+a{
+    color: #03a9f4;
+    &:hover{
+        color: blue;
+    }
+    &:focus{
+        color: red;
+    }
+}
 .title-font{
     display:inline-block;
     font-weight: 700;
@@ -77,91 +85,29 @@ body{
 .flex{
     display: flex;
 }
-.filter-top {
-    margin-bottom: 1em;
-}
-.filter-top__left {
-    font-weight: 700;
-    font-size: 1.6em;
-}
-.users-list__user, .user-details__row, .filter-top{
-    justify-content: space-between;
-    flex-direction: column;
-}
-.users-list__wrapper {
-    border: 1px solid grey;
-}
-.users-list__names,.users-list__email{
-    line-height: 1.6;
-}
-.users-list__email {
-    padding-left: 70px;
-}
-.users-list__user:nth-of-type(odd) {
-    background: #efefef;
-}
-
-.users-list__user {
-    padding: 20px;
-    align-items: unset;
-    transition:0.3s;
-    background-color: white;
-    &:hover{
-        box-shadow: 1px 1px 9px 0px rgb(0 0 0 / 40%);
-        filter: brightness(95%);
-
-    }
-}
-.users-list__user-left {
-    align-items: center;
-    cursor: pointer;
-    &:hover{
-        text-decoration: underline;
-    }
-}
-
-.users-list__user:not(.users-list__user:last-of-type) {
-    border-bottom:1px solid grey;
-}
-input#search-text {
-    margin-right: 0px;
-    width: 100%;
-    box-sizing: border-box;
-}
-select#sort-by {
-    width: 100%;
-}
-.filter-top__right {
-    margin-top: 1rem;
-}
-
-
-.user-details__box {
-    padding: 15px 0px;
-}
-.user-details__box-title {
-    font-weight: 700;
-    margin-bottom: 1em;
-}
-.user-details__box-content {
-    line-height: 1.3em;
-}
-
 .rounded-img{
     border-radius: 50%;
     align-self: center;
     margin-right: 20px;
 }
-
+.user-details__box {
+    padding: 15px 0px;
+    &-title {
+        font-weight: 700;
+        margin-bottom: 1em;
+    }
+    &-content {
+        line-height: 1.3em;
+    }
+    
+}
+.user-details__row {
+    flex-direction: column;
+}
 @media screen and (min-width: 768px){
-    .filter-top__right {
-        margin-top: 0rem;
-    }
-    .container{
-        max-width: 1024px;
-    }
-    .user-details__row.flex {
+    .user-details__row {
         margin: 0px -10px;
+        flex-direction: unset;
     }
     .user-details__box {
         flex: 1;
@@ -169,21 +115,7 @@ select#sort-by {
         margin: 10px;
         padding: 15px 20px;
     }
-    .users-list__user, .user-details__row, .filter-top{
-        flex-direction: unset;
-    }
-    .users-list__user {
-        align-items: center;
-    }
-    .users-list__email {
-        padding-left: 0px;
-    }
-    input#search-text {
-        margin-right: 20px;
-        width: auto;
-        box-sizing: border-box;
-    }
-    select#sort-by {
-        width: auto;
+    .container{
+        max-width: 1024px;
     }
 }
