@@ -9,7 +9,7 @@
                     <div>Username: {{posts.username}}</div>
                     <div>Email: <a href="mailto:{{posts.email}}"></a>{{posts.email}}</div>
                     <div>Phone: <a href="tel:{{posts.phone}}">{{posts.phone}}</a></div>
-                    <div>Website: <a href="{{posts.website}}">{{posts.website}}</a></div>
+                    <div>Website: <a target="_blank" href="{{posts.website}}">{{posts.website}}</a></div>
                 </div>
             </div>
             <div class="user-details__box">
@@ -27,7 +27,7 @@
                 <div class="user-details__box-content">
                     <div>{{posts.company.name}}</div>
                     <div>{{posts.company.bs}}</div>
-                    <div>{{posts.company.catchPhrase}}</div>
+                    <div class="catch-phrase">"{{posts.company.catchPhrase}}"</div>
                 </div>
             </div>
         </div>
