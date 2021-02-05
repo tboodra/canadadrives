@@ -10,12 +10,19 @@ export class UserListComponent implements OnInit {
 
   constructor(private http: HttpClient) { }  //create instance
   posts:any;
+  searchText = "";
+  sortResultsBy = "name";
   getPosts(){
-    this.posts = this.http.get('http://jsonplaceholder.typicode.com/users/');
+    var url = 'http://jsonplaceholder.typicode.com/users/';
+    return this.http.get(url);
   }
   ngOnInit(): void {
 
-    this.getPosts();
-    console.log(this.posts);
+    this.getPosts().subscribe((res) => (this.posts = res));
+
+    //console.log(this.posts);
   }
 }
+
+
+

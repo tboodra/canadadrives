@@ -1,7 +1,5 @@
-<p>user-details works!</p>
-
-
-<section class="user-details container">
+<section class="user-details container margin-t-2 margin-b-2">
+        <span class="title-font"><a href="/users">Users</a> > {{posts.name}}</span>
         <div class="user-details__row flex">
             <div class="user-details__box">
                 <div class="user-details__box-title">
@@ -34,3 +32,8 @@
             </div>
         </div>
 </section>
+
+<section class="container">
+    <span class="title-font">Posts by {{posts.name}}</span>
+</section>
+    <app-user-posts></app-user-posts>

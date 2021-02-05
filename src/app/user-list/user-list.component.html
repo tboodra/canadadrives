@@ -1,27 +1,28 @@
 
-<section class="filter-top flex container">
+<section class="filter-top flex container margin-t-2">
                 <div class="filter-top__left">Users</div>
                 <div class="filter-top__right">
-                    Search: <input type="text" value="">
-                    Sort By: <select name="sort-by" id="">
-                        <option value="name" selected>Name</option>
+                    <label for="search-text">Search:</label> <input [(ngModel)]='searchText' id="search-text">
+                    <label for="sort-by">Sort</label> By: <select [(ngModel)]="sortResultsBy" id="sort-by">
+                        <option value="name">Name</option>
                         <option value="username">Username</option>
                         <option value="email">E-mail</option>
                     </select>
                 </div>
             </section>
 
-<section class="users-list container">
+<section class="users-list container margin-b-2">
                 <div class="users-list__wrapper">
-                                
-                    <div *ngFor="let post of posts | async" class="users-list__user flex">
-                        <div class="users-list__user-left flex">
+
+
+                    <div *ngFor="let post of posts | searchfilter:searchText:sortResultsBy | sortBy: sortResultsBy" class="users-list__user flex">
+                        <div class="users-list__user-left flex"  routerLink="/users/{{post.id}}" routerLinkActive="active">
                                 <div class="users-list__photo"><img class="rounded-img" src="http://via.placeholder.com/50x50"></div>
                                 <div class="users-list__names">{{post.name}}<br />{{post.username}}</div>
                         </div>
-                        <div class="users-list__email">{{post.email}}</div>
+                        <div class="users-list__email"><a href="mailto:{{post.email}}" onclick="preventDefault()">{{post.email}}</a></div>
                     </div>
+
                 </div>
             </section>
 
-            {{posts | json}}

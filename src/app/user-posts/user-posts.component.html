@@ -1,1 +1,12 @@
-<p>user-posts works!</p>
+<section class="user-details container">
+        <div class="user-details__row user-posts__row flex">
+            <div class="user-details__box user-posts__box" *ngFor="let post of posts">
+                <div class="user-details__box-title">
+                    {{post.title}}
+                </div>
+                <div class="user-details__box-content">
+                   {{post.body}}
+                </div>
+            </div>
+        </div>
+</section>
